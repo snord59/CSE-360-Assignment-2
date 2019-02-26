@@ -6,12 +6,13 @@ package cse360assign2;
  * and displays the current total and the calculation history.
  * 
  * @author  Sophia Nordlie class ID: 513
- * @version 1.0
+ * @version 1.1
  * @since   2019-02-25
  */
 public class Calculator {
 
 	private int total;
+	private String history = "0";
 	
 	/**
 	 * Calculator – This is the constructor for the calculator.
@@ -35,6 +36,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = value + total;
+		history = history + " + " + value;
 	}
 	
 	/**
@@ -44,6 +46,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
@@ -52,6 +55,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = value * total;
+		history = history + " * " + value;
 	}
 	
 	/**
@@ -65,6 +69,7 @@ public class Calculator {
 		else {
 			total = 0;
 		}
+		history = history + " / " + value;
 	}
 	
 	/**
@@ -72,7 +77,7 @@ public class Calculator {
 	 * @return String This is the calculation history.
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 
 }
